@@ -1,0 +1,452 @@
+/* Brushed aluminum enclosure, chrome edges, physical buttons and blue LCDs. */
+:root {
+  color: #e2e8ec;
+  background: #74797d;
+  --muted: #a4b5bf;
+  --metal:
+    repeating-linear-gradient(
+      0deg,
+      #ffffff06 0px,
+      #ffffff06 1px,
+      #0000000c 1px,
+      #0000000c 2px,
+      transparent 2px,
+      transparent 4px
+    ),
+    linear-gradient(
+      110deg,
+      #62686c 0%,
+      #b0b5b8 8%,
+      #747a7e 22%,
+      #949a9d 47%,
+      #d0d3d5 70%,
+      #7d8387 89%,
+      #aab0b4 100%
+    );
+  --black-metal:
+    repeating-linear-gradient(
+      0deg,
+      #ffffff04 0px,
+      #ffffff04 1px,
+      #0000000b 1px,
+      #0000000b 3px
+    ),
+    linear-gradient(110deg, #282d30, #171b1d 55%, #303639);
+  --chrome:
+    inset 0 1px 0 #ffffffb0, inset 0 -2px 0 #0009, 0 1px 0 #e0e5e855,
+    0 3px 5px #0006;
+  --button: linear-gradient(
+    180deg,
+    #a5b2ba 0%,
+    #697780 6%,
+    #303c45 18%,
+    #202b33 65%,
+    #10191f 90%,
+    #54616a 97%,
+    #20272c 100%
+  );
+  --inset: inset 0 2px 7px #000d, inset 0 -1px 0 #b0bac14c, 0 1px 0 #ffffff20;
+}
+body {
+  background: radial-gradient(ellipse at 50% 5%, #a5a9ac, #74797d 60%, #50565b);
+  background-attachment: fixed;
+  padding: 30px 24px 42px;
+}
+button,
+input,
+select,
+textarea {
+  transition:
+    border-color 0.15s,
+    color 0.15s,
+    box-shadow 0.15s;
+}
+button {
+  border: 1px solid #657782;
+  color: #c6d6df;
+  background: var(--button);
+  box-shadow: var(--chrome);
+}
+button:hover:not(:disabled) {
+  color: #fff;
+  border-color: #94cee6;
+}
+button:active:not(:disabled) {
+  box-shadow: var(--inset);
+}
+button:focus-visible,
+a:focus-visible,
+select:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+summary:focus-visible {
+  outline: 2px solid #83dfff;
+  outline-offset: 3px;
+}
+input,
+select,
+textarea {
+  color: #a0e2ff;
+  border-color: #596b76;
+  background: #0b151c;
+  box-shadow: var(--inset);
+}
+input::placeholder {
+  color: #8ba4b2;
+}
+select option {
+  color: #e1e8ec;
+  background: #182229;
+}
+.app-shell {
+  position: relative;
+  max-width: 1260px;
+  padding: 0 24px;
+  border: 2px solid #161c20;
+  border-radius: 30px;
+  background: var(--metal);
+  box-shadow:
+    inset 0 2px 0 #f2f5f6,
+    inset 0 5px 0 #5d676e,
+    inset 0 7px 0 #d4dade,
+    inset 0 -2px 0 #c6ced3,
+    inset 0 -7px 0 #333d44,
+    inset 2px 0 0 #f4f7f8,
+    inset -2px 0 0 #f4f7f8,
+    0 8px 0 -3px #182127,
+    0 11px 0 -4px #98a6af,
+    0 25px 30px -8px #0009;
+}
+.enclosure-hardware {
+  pointer-events: none;
+}
+.enclosure-screw {
+  position: absolute;
+  z-index: 3;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 35% 28%,
+    #f8fafb 0%,
+    #9ea9b0 35%,
+    #212a31 45%,
+    #090e12 67%,
+    #b1bcc3 73%,
+    #424e57 94%
+  );
+  box-shadow:
+    0 0 0 1px #242f35,
+    0 1px 1px #ffffffb3;
+}
+.enclosure-screw::after {
+  content: "";
+  position: absolute;
+  inset: 4px 6px;
+  background: #03080b;
+  transform: rotate(35deg);
+  box-shadow: 1px 0 0 #a6b2bb;
+}
+.enclosure-tl {
+  top: 30px;
+  left: 9px;
+}
+.enclosure-tr {
+  top: 30px;
+  right: 9px;
+}
+.enclosure-bl {
+  bottom: 24px;
+  left: 9px;
+}
+.enclosure-br {
+  bottom: 24px;
+  right: 9px;
+}
+.topbar {
+  margin: 12px 0;
+  padding: 24px 22px;
+  border: 2px solid #171e23;
+  border-radius: 18px 18px 30px 30px;
+  background: var(--black-metal);
+  box-shadow:
+    var(--chrome),
+    inset 0 0 30px #0005;
+}
+.brand-symbol {
+  width: 44px;
+  height: 44px;
+  color: #163847;
+  background: conic-gradient(
+    from 25deg,
+    #e6eaed,
+    #545e65,
+    #c5cdd2,
+    #eff3f5,
+    #576168,
+    #c0c8ce,
+    #e6eaed
+  );
+  border: 3px solid #0e151b;
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 1px #b8c8d1,
+    inset 0 0 0 2px #9ba7ad,
+    0 3px 4px #000a;
+}
+.brand strong {
+  font-size: 27px;
+  font-weight: 600;
+  font-style: italic;
+  letter-spacing: -1.3px;
+  background: linear-gradient(
+    180deg,
+    #f5fdff 12%,
+    #b6c7ce 32%,
+    #548199 46%,
+    #203944 49%,
+    #f4fbff 53%,
+    #8cbdcf 76%,
+    #b6eaff 95%
+  );
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.brand-caption,
+.docs-link {
+  color: #a9bbc5;
+}
+.language-button span:not(.active) {
+  color: #8a9ba5;
+}
+.language-button .active {
+  color: #a7e6ff;
+}
+.hero {
+  color: #14232c;
+  text-shadow: 0 1px 0 #ffffff70;
+}
+.hero-eyebrow {
+  color: #263e4b;
+}
+.hero p {
+  color: #263a46;
+}
+.pulse-dot,
+.tiny-led,
+.validation-light {
+  background: #73dbff;
+  box-shadow: 0 0 6px #25bdff99;
+  border: 1px solid #14384a;
+}
+.workflow-strip {
+  color: #99d8f5;
+  background: linear-gradient(#081a24, #173746);
+  border: 1px solid #293f4c;
+  box-shadow: var(--inset);
+  border-radius: 8px;
+  text-shadow: 0 0 5px #45cbff44;
+}
+.workspace {
+  background: #313a40;
+  border: 1px solid #243039;
+  box-shadow: var(--inset);
+}
+.panel {
+  background: var(--black-metal);
+  border: 1px solid #6b7b84;
+  box-shadow:
+    inset 0 1px 0 #afbbc355,
+    0 4px 8px #0006;
+}
+.panel-heading {
+  color: #d4e1e8;
+  border-color: #101b23;
+  background: linear-gradient(#44545e, #25333d);
+  box-shadow:
+    inset 0 1px 0 #b0c9d044,
+    0 1px 0 #60778444;
+}
+.panel-heading > svg {
+  color: #91cce7;
+}
+.panel-number {
+  background: #142936;
+  color: #9fe3ff;
+  border: 1px solid #6a91a5;
+  box-shadow: var(--inset);
+}
+.field-hint,
+.results-heading,
+.library-bottom,
+.builder-bottom,
+.behavior-note {
+  color: var(--muted);
+}
+.search-field {
+  background: #091922;
+  color: #94cee6;
+  border-color: #607786;
+  box-shadow: var(--inset);
+}
+.search-field input {
+  color: #b5e9ff;
+  box-shadow: none;
+}
+.category-button.active,
+.modifier-button.active,
+.mode-buttons button.active {
+  color: #b9ecff;
+  border-color: #7ad1f4;
+  background: linear-gradient(#164c67, #102d40);
+  box-shadow:
+    inset 0 1px 0 #abe8ff44,
+    inset 0 -2px 0 #061a28,
+    0 0 7px #48bde622;
+}
+.keycode-results {
+  scrollbar-color: #587584 #17252d;
+}
+.keycode-result {
+  border-color: #485e6b;
+  background: linear-gradient(135deg, #293640, #18252e);
+  box-shadow:
+    inset 0 1px 0 #bfd8e014,
+    0 2px 3px #0003;
+}
+.keycode-result.active {
+  border-color: #6aabc6;
+}
+.result-heading strong {
+  color: #d7e7ef;
+}
+.platform-badge {
+  color: #b5d5e5;
+  border-color: #4e7285;
+  background: #112c3b;
+}
+.result-combination {
+  color: #9bdefb;
+}
+.result-code {
+  color: #b0e7ff;
+}
+.primary-button {
+  color: #d3f2ff;
+  border-color: #6bb9dc;
+  background: linear-gradient(
+    #6fcef055 0%,
+    #215a79 12%,
+    #17405b 70%,
+    #082238 92%,
+    #4b95b6 100%
+  );
+  text-shadow: 0 1px 2px #0008;
+}
+.secondary-button {
+  color: #c0d2dd;
+}
+.library-bottom,
+.builder-bottom {
+  background: #17232c;
+  border-color: #435663;
+}
+.info-dot {
+  color: #91c9e5;
+  border-color: #6c94a7;
+}
+.field-label {
+  color: #d2e2ea;
+}
+.advanced-builder {
+  border-color: #435d6d;
+  background: #15232c;
+}
+.advanced-builder summary {
+  color: #b5d9ec;
+}
+.mod-row > span {
+  color: #9aafb9;
+}
+.code-output {
+  background: linear-gradient(#071923, #102c3b);
+  border-color: #698898;
+  box-shadow: var(--inset);
+}
+.output-label {
+  color: #9bd9f5;
+}
+.output-status {
+  color: #89cbdf;
+}
+.has-error .output-status,
+.empty-results [role="alert"] {
+  color: #ffc0ab;
+}
+.validation-light.error {
+  background: #ff997c;
+  border-color: #722f25;
+  box-shadow: 0 0 6px #ff805e66;
+}
+.paste-hint {
+  color: #99c8dd;
+}
+footer {
+  color: #172f3d;
+  text-shadow: 0 1px 0 #ffffff55;
+}
+.notification,
+.dialog {
+  background: var(--black-metal);
+  color: #d5e8f3;
+  border-color: #7994a5;
+  box-shadow:
+    var(--chrome),
+    0 12px 28px #0006;
+}
+.notification.error {
+  border-color: #d18b74;
+  color: #ffc6b0;
+}
+.guide-step p {
+  color: #b5c6d0;
+}
+@media (max-width: 1050px) {
+  .brand strong {
+    font-size: 23px;
+  }
+}
+@media (max-width: 720px) {
+  body {
+    padding: 12px 8px 25px;
+  }
+  .app-shell {
+    padding: 0 12px;
+    border-radius: 22px;
+  }
+  .topbar {
+    padding: 20px 15px;
+  }
+  .brand strong {
+    font-size: 22px;
+  }
+  .brand-symbol {
+    width: 36px;
+    height: 36px;
+  }
+  .enclosure-screw {
+    width: 10px;
+    height: 10px;
+  }
+  .enclosure-screw::after {
+    inset: 3px 4px;
+  }
+  .enclosure-tl,
+  .enclosure-bl {
+    left: 3px;
+  }
+  .enclosure-tr,
+  .enclosure-br {
+    right: 3px;
+  }
+}

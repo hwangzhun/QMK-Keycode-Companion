@@ -1,0 +1,176 @@
+import type { Language } from "./core/types";
+export const messages = {
+  appName: ["QMK 键码助手", "QMK Keycode Companion"],
+  workstation: ["单键键码查找与生成", "Find & build a keycode"],
+  heroTitle: ["找到指令，复制键码。", "Find a command. Copy its code."],
+  heroDesc: [
+    "搜索快捷键或按键功能，复制键码，再到 VIA 设置你的键位。",
+    "Find a shortcut or key action, copy its code, then assign it in VIA.",
+  ],
+  localOnly: ["浏览器本地运行", "Runs locally in your browser"],
+  help: ["使用指南", "Quick guide"],
+  library: ["键码库", "Keycode library"],
+  search: ["搜索键码或快捷键…", "Search keycodes or shortcuts…"],
+  searchHint: [
+    "试试 Ctrl+V、粘贴、Volume Up 或 KC_ESC",
+    "Try Ctrl+V, Paste, Volume Up, or KC_ESC",
+  ],
+  all: ["全部", "All"],
+  shortcuts: ["快捷键", "Shortcuts"],
+  basic: ["基础键", "Basic"],
+  symbols: ["符号", "Symbols"],
+  function: ["功能键", "Function"],
+  media: ["媒体", "Media"],
+  mouse: ["鼠标", "Mouse"],
+  lighting: ["灯光", "Lighting"],
+  special: ["特殊键", "Special"],
+  results: ["个结果", "results"],
+  noResults: ["没有找到键码", "No keycodes found"],
+  noResultsHint: [
+    "试试其他关键词，或切换到全部分类。也可以在生成器中组合快捷键。",
+    "Try another term or all categories, or compose a shortcut in the builder.",
+  ],
+  clearSearch: ["清除搜索", "Clear search"],
+  windowsLinux: ["Windows / Linux", "Windows / Linux"],
+  macOS: ["macOS", "macOS"],
+  shortcutNote: [
+    "功能名仅说明常见用途，具体行为取决于系统与应用。",
+    "Names describe common uses; behavior depends on your OS and app.",
+  ],
+  builder: ["单键生成器", "Keycode builder"],
+  loadBuilder: ["载入生成器", "Load in builder"],
+  loaded: ["已载入生成器", "Loaded in builder"],
+  basicMode: ["单键", "Single key"],
+  shortcutMode: ["快捷键", "Shortcut"],
+  layerMode: ["层切换", "Layer switch"],
+  modtapMode: ["修饰键长按", "Mod-Tap"],
+  layertapMode: ["层长按", "Layer-Tap"],
+  advanced: ["高级生成", "Advanced builder"],
+  advancedBehavior: ["高级单键行为", "Advanced key behavior"],
+  advancedDefault: ["使用单键 / 快捷键", "Use single key / shortcut"],
+  baseKey: ["基础键码", "Base keycode"],
+  tapKey: ["点击键码", "Tap keycode"],
+  modifiers: ["修饰键", "Modifiers"],
+  holdModifiers: ["长按修饰键", "Hold modifiers"],
+  left: ["左侧", "Left"],
+  right: ["右侧", "Right"],
+  targetLayer: ["目标层", "Target layer"],
+  layerAction: ["切换方式", "Layer action"],
+  MO: ["按住激活", "Momentary"],
+  TG: ["切换开关", "Toggle"],
+  TO: ["跳转至此层", "Move to layer"],
+  DF: ["设为基础层", "Set default"],
+  OSL: ["下一次按键激活", "One-shot"],
+  TT: ["点击切换 / 按住激活", "Tap-toggle"],
+  output: ["生成代码", "Generated code"],
+  valid: ["有效表达式", "Valid expression"],
+  copy: ["复制代码", "Copy code"],
+  copied: ["已复制代码", "Code copied"],
+  copyFailed: [
+    "无法访问剪贴板，请选中代码手动复制。",
+    "Clipboard unavailable. Select the code and copy manually.",
+  ],
+  basicDescription: [
+    "按下时发送所选键码。",
+    "Sends the selected keycode when pressed.",
+  ],
+  shortcutDescription: [
+    "同时按下修饰键与基础键。",
+    "Presses the modifiers and base key together.",
+  ],
+  modtapDescription: [
+    "点击发送基础键，长按作为修饰键。",
+    "Tap for the base key; hold for modifiers.",
+  ],
+  layertapDescription: [
+    "点击发送基础键，长按激活目标层。",
+    "Tap for the base key; hold to activate a layer.",
+  ],
+  layerDescription: [
+    "使用所选方式切换键盘层。",
+    "Changes the keyboard layer using this action.",
+  ],
+  ansiNote: [
+    "符号按 US ANSI 主机布局生成。",
+    "Symbols use the US ANSI host layout.",
+  ],
+  featureNote: [
+    "媒体、鼠标与灯光功能需固件支持；目标层须由固件提供。",
+    "Media, mouse, and lighting require firmware support; target layers must exist in firmware.",
+  ],
+  compatibility: ["键码兼容版本", "Keycode compatibility"],
+  legacy: ["旧版 VIA（协议 12）", "Legacy VIA (protocol 12)"],
+  v8: ["QMK 键码 v8（协议 13）", "QMK keycodes v8 (protocol 13)"],
+  v9: ["QMK 键码 v9（协议 13）", "QMK keycodes v9 (protocol 13)"],
+  profileHelp: [
+    "默认使用旧版 VIA。需要时选择与键盘固件匹配的版本。",
+    "Defaults to legacy VIA. Select the profile matching your firmware when needed.",
+  ],
+  guideTitle: ["查找 → 复制 → 粘贴到 VIA", "Find → Copy → Paste into VIA"],
+  guide1Title: ["查找指令", "Find a command"],
+  guide1: [
+    "搜索 Ctrl+V、粘贴或基础键码。也可在单键生成器中组合修饰键和基础键。",
+    "Search for Ctrl+V, Paste, or a keycode. You can also combine modifiers and a base key in the builder.",
+  ],
+  guide2Title: ["复制键码", "Copy the code"],
+  guide2: [
+    "直接复制搜索结果，或载入生成器调整后复制。每次输出一个键码表达式。",
+    "Copy a result directly, or load it in the builder to adjust it. Each output is one keycode expression.",
+  ],
+  guide3Title: ["在 VIA 设置键位", "Assign it in VIA"],
+  guide3: [
+    "在 VIA 选中要修改的键位，打开 Any，粘贴键码并确认。例如把原来的 V 键设置为 LCTL(KC_V)。",
+    "Select the key to change in VIA, open Any, paste the code, and confirm. For example, assign LCTL(KC_V) to the original V key.",
+  ],
+  source: ["键码数据来源", "Keycode sources"],
+  sourceNote: [
+    "本地字典快照 · 2026-10-09",
+    "Local dictionary snapshot · 2026-10-09",
+  ],
+  close: ["关闭", "Close"],
+  chooseModifier: ["请至少选择一个修饰键。", "Select at least one modifier."],
+  mixedModifiers: [
+    "同一组合不能混用左右修饰键，QMK 会将它们全部编码为右侧。",
+    "Do not mix left and right modifiers: QMK would encode them all as right-sided.",
+  ],
+  invalidShortcut: [
+    "请输入修饰键 + 基础键，例如 Ctrl+V 或 Ctrl+Shift+Esc。",
+    "Enter modifiers + a base key, such as Ctrl+V or Ctrl+Shift+Esc.",
+  ],
+  invalidExpression: [
+    "无法解析此键码表达式。",
+    "This keycode expression cannot be parsed.",
+  ],
+  unknownKeycode: [
+    "当前兼容版本不支持此键码。",
+    "This keycode is not recognized in this compatibility profile.",
+  ],
+  invalidLayer: [
+    "层号必须是非负整数。",
+    "Layer number must be a non-negative integer.",
+  ],
+  layerTapRange: [
+    "Layer-Tap / Layer-Mod 只支持 0–15 层。",
+    "Layer-Tap / Layer-Mod supports layers 0–15.",
+  ],
+  layerRange: ["层号超出允许范围。", "Layer number is out of range."],
+  basicTapOnly: [
+    "点击键必须是基础键码，不能包含 Shift 符号或快捷键。",
+    "The tap key must be a basic keycode, without shifted symbols or shortcuts.",
+  ],
+  basicShortcutOnly: [
+    "修饰键只能组合基础键码。",
+    "Modifiers can only wrap basic keycodes.",
+  ],
+  enterAny: ["粘贴到 VIA → Any", "Paste into VIA → Any"],
+  keycodeInputHint: [
+    "载入搜索结果，或输入 KC_ 键码 / 表达式",
+    "Load a search result, or enter a KC_ keycode / expression",
+  ],
+  emptyCode: ["选择或输入一个键码。", "Choose or enter a keycode."],
+} satisfies Record<string, readonly [string, string]>;
+export type MessageKey = keyof typeof messages;
+export function translate(language: Language, key: string): string {
+  const value = messages[key as MessageKey];
+  return value ? value[language === "zh" ? 0 : 1] : key;
+}
